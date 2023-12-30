@@ -1,6 +1,6 @@
 import React from "react";
 import "./Manus.css";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   FcHome,
   FcAbout,
@@ -21,39 +21,39 @@ const Manus = ({ toggle }) => {
             <img src={Profile} alt="profile pic" />
           </div>
           <div className="nav-items">
-              <Link className="nav-link" to="/">
-                <FcHome />
-                Home
-              </Link>
-              <Link className="nav-link" to="/about">
-                <FcAbout />
-                About
-              </Link>
-           
-              <Link className="nav-link" to="/education">
-                <FcReading />
-                Education
-              </Link>
+            <Link className="nav-link" to="/">
+              <FcHome />
+              Home
+            </Link>
+            <Link className="nav-link" to="/about">
+              <FcAbout />
+              About
+            </Link>
 
-              <Link className="nav-link" to="techstack">
-                <FcMultipleDevices />
-                Technology
-              </Link>
+            <Link className="nav-link" to="/education">
+              <FcReading />
+              Education
+            </Link>
 
-              <Link className="nav-link" to="/projects">
+            <Link className="nav-link" to="techstack">
+              <FcMultipleDevices />
+              Technology
+            </Link>
+
+            <Link className="nav-link" to="/projects">
               <FcAcceptDatabase />
-                Projects
-              </Link>
+              Projects
+            </Link>
 
-              <Link className="nav-link" to="/experince">
-                <FcPortraitMode />
-                Experince
-              </Link>
-          
-              <Link className="nav-link" to="contact">
-                <FcBusinessContact />
-                Contact
-              </Link>
+            <Link className="nav-link" to="/experince">
+              <FcPortraitMode />
+              Experince
+            </Link>
+
+            <Link className="nav-link" to="contact">
+              <FcBusinessContact />
+              Contact
+            </Link>
           </div>
         </>
       ) : (
@@ -61,7 +61,7 @@ const Manus = ({ toggle }) => {
           <div className="nav-items">
             <div className="nav-link">
               <Link to="/">
-               <FcHome title="Home" />
+                <FcHome title="Home" />
               </Link>
             </div>
             <div className="nav-link">

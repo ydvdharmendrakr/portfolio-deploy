@@ -71,7 +71,7 @@ const Contact = () => {
                         <BsGithub color="black" size={25} className="ms-2" />
                       </a>
                       <a
-                        href="https://www.instagram.com/ydvdharmendrakr/"
+                        href="https://www.instagram.com/kodewithdky/"
                         target="_balnk"
                       >
                         <BsInstagram color="red" size={25} className="ms-2" />

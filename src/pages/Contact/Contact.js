@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import ContactImage from "../../assets/images/contact.jpg";
 import { BsLinkedin, BsGithub, BsInstagram, BsFacebook } from "react-icons/bs";
 import { FaTwitterSquare } from "react-icons/fa";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import {
   alertNotification,
@@ -10,33 +10,22 @@ import {
 } from "../../utils/Alert/Notification";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [msg, setMsg] = useState("");
+  const form = useRef();
 
   //handle submit button
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (!name || !email || !msg) {
-        alertNotification("Please Provide all fields!");
-      }
-      const res = await axios.post("/api/v1/portfolio/sendEmail", {
-        name,
-        email,
-        msg,
-      });
-      //validation success
-      if (res.data.success) {
-        successNotification("Message send success fully!");
-        setName("");
-        setEmail("");
-        setMsg("");
-      } else {
-        alertNotification("Error while sending message!");
-      }
+      await emailjs.sendForm(
+        "service_9xte42q",
+        "template_thzvu2n",
+        form.current,
+        "fCQ-rpa3yp1vNS7f7"
+      );
+
+      successNotification("Message send success fully!");
     } catch (error) {
-      console.log(error);
+      alertNotification("Error while sending message!");
     }
   };
 
@@ -99,41 +88,38 @@ const Contact = () => {
                     <small className="or text-center">OR</small>
                     <div className="line" />
                   </div>
-                  <div className="row px-3">
-                    <input
-                      className="mb-3"
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-                  <div className="row px-3">
-                    <input
-                      className="mb-3"
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                  <div className="row px-3">
-                    <textarea
-                      className="mb-3"
-                      type="text"
-                      name="msg"
-                      placeholder="Write your message"
-                      value={msg}
-                      onChange={(e) => setMsg(e.target.value)}
-                    />
-                  </div>
-                  <div className="row px-3">
-                    <button className="button" onClick={handleSubmit}>
-                      Send Message
-                    </button>
-                  </div>
+                  <form ref={form} onSubmit={handleSubmit}>
+                    <div className="row px-3">
+                      <input
+                        className="mb-3"
+                        type="text"
+                        name="to_name"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <input
+                        className="mb-3"
+                        type="email"
+                        name="to_email"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <textarea
+                        className="mb-3"
+                        type="text"
+                        name="message"
+                        placeholder="Write your message"
+                        required
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <input type="submit" value="Send Message" />
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

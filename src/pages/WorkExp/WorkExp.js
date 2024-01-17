@@ -6,7 +6,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import "./WorkExp.css";
 import { SiReact } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava,FaPython } from "react-icons/fa";
 import { AiOutlineAndroid } from "react-icons/ai";
 import { FaMobile } from "react-icons/fa6";
 
@@ -32,7 +32,7 @@ const WorkExp = () => {
               icon={<SiReact color="blue" />}
             >
               <h3 className="vertical-timeline-element-title">
-                MEN Stack Developer
+                MERN Stack Developer!
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
                 codewithdky pvt ltd, IN
@@ -47,10 +47,10 @@ const WorkExp = () => {
               }}
               date="2021 - 2022"
               iconStyle={{ background: "#f4f731", color: "#fff" }}
-              icon={<FaJava color="red" />}
+              icon={<FaPython color="red" />}
             >
               <h3 className="vertical-timeline-element-title">
-                Java Developer
+                Python Developer!
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
                 codewithdky pvt ltd, IN
@@ -68,7 +68,7 @@ const WorkExp = () => {
               icon={<FaMobile color="pink" />}
             >
               <h3 className="vertical-timeline-element-title">
-                Native Developer
+                Native Developer!
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
                 codewithdky pvt ltd, IN

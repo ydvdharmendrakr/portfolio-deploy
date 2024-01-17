@@ -34,7 +34,7 @@ const Projects = () => {
                 </div>
                 <a
                   className="project-btn"
-                  href="https://github.com/ydvdharmendrakr/iNeubytes-Internship/tree/main/myshop"
+                  href="https://rongry-deploy.onrender.com"
                   target="_blank"
                 >
                   View
@@ -86,7 +86,7 @@ const Projects = () => {
                 </div>
                 <a
                   className="project-btn"
-                  href="https://github.com/kodewithdky/nejswp"
+                  href="https://github.com/kodewithdky/ums"
                   target="_blank"
                 >
                   View
